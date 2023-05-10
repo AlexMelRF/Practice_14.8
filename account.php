@@ -1,3 +1,12 @@
+<?php
+
+require_once ('process_data.php');
+session_start();
+$auth = $_SESSION['auth'] ?? null;
+if (!$auth)                         // No way to login.php!
+    header ('Location: index.php'); //
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,19 +19,17 @@
 <body>
     <a href="index.php">На главную</a>
     <a href="logout.php">Выйти</a>
-    <form action="set_date.php" method="post">
-        <label>Укажите нам дату Вашего дня рождения и мы предоставим вам дополнительные скидки!</label>
-        <input type="date" name="date" id="date" value="2000-01-01" min="1950-01-01" max="2005-01-01">
-        <input type="submit" value="Подтвердить">
-    </form>
+    <?php
+
+    if (!isset($_COOKIE['date_of_birth'])) {?>
+        <form action="set_date.php" method="post">
+            <label>Укажите нам дату Вашего дня рождения и мы предоставим вам дополнительные скидки!</label>
+            <input type="date" name="date" id="date" value="2000-01-01" min="1950-01-01" max="2005-01-01">
+            <input type="submit" value="Подтвердить">
+        </form>
+    <?php } ?>
 </body>
 </html>
 
-<?php
 
-require_once ('process_data.php');
-session_start();
-$auth = $_SESSION['auth'] ?? null;
-if (!$auth)                         // No way to login.php!
-    header ('Location: index.php'); //
 

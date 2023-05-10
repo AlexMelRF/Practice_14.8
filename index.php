@@ -18,14 +18,16 @@
         <a href="login.php">Вход</a>
     <?php } else {
                 ?>
-                <p>Пользователь: <?php echo getCurrentUser(); ?></p>
+                <a href="account.php">Привет, <?php echo getCurrentUser(); ?></a>
                 <br>
                 <?php
                 if (!getPromo())
                     setPromo();
                 else { ?> 
                     <p><?php echo getPromo(); ?></p>
-                <?php } ?>
+                <?php } 
+                if (getDateOfBirth()) ?>
+                    <p><?php echo getDateOfBirth(); ?></p>
                 <br>
                 <a href="logout.php">Выйти</a>
             <?php } ?>

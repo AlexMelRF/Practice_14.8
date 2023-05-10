@@ -42,8 +42,29 @@ function setDateOfBirth($date) {
 
 function getDateOfBirth() {
     if (isset($_COOKIE['date_of_birth'])) {
-        $rem_days = 0;
-        return $rem_days;
+        $date = $_COOKIE['date_of_birth'];
+        $date_user = explode('-', $date);
+        $date_cur = explode('-', date('y-m-d'));
+        $temp_cur = $date_cur[1].$date_cur[2];
+        $temp_user = $date_user[1].$date_user[2];
+        if ($temp_cur == $temp_user)
+            return "С Днем Рождения! Сегодня Вам предоставляются скидки на все услуги в размере 5%";
+            elseif ($temp_cur < $temp_user)
+                $target = date_create($date_cur[0].'-'.$date_user[1].'-'.$date_user[2]); 
+                else {
+                    $y = $date_cur[0] + 1;
+                    $target = date_create($y.'-'.$date_user[1].'-'.$date_user[2]);
+                }
+        $origin = date_create(date('y-m-d')); 
+        $interval = date_diff($origin, $target);
+        $rem_days = $interval -> format ('%a');
+        if ((string)$rem_days[-1] == '1') 
+            $d = 'день';
+            elseif ((string)$rem_days[-1] == '2' || (string)$rem_days[-1] == '3' || (string)$rem_days[-1] == '4')
+                $d = 'дня';
+                else
+                    $d = 'дней';
+        return "До Вашего дня рождения осталось $rem_days $d";
     }
     return null;
 }
