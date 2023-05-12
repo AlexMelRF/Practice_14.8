@@ -19,17 +19,25 @@ if (!$auth)                         // No way to login.php!
     <link rel="stylesheet" href="style/style_account.css">
 </head>
 <body>
-    <a href="index.php">На главную</a>
-    <a href="logout.php">Выйти</a>
-    <?php
-
-    if (!isset($_COOKIE['date_of_birth'])) {?>
-        <form action="set_date.php" method="post">
-            <label>Укажите нам дату Вашего дня рождения и мы предоставим вам дополнительные скидки!</label>
-            <input type="date" class="form-control" name="date" id="date" value="2000-01-01" min="1950-01-01" max="2005-01-01">
-            <input type="submit" value="Подтвердить">
-        </form>
-    <?php } ?>
+    <div id="list">
+        <a href="index.php">На главную</a>
+        <a href="logout.php">Выйти</a>
+    </div>
+    <div id="form">
+        <?php
+        if (!isset($_COOKIE['date_of_birth'])) {?>
+            <form action="set_date.php" method="post">
+                <label>Укажите нам дату Вашего дня рождения и мы <br>
+                    предоставим вам дополнительные скидки!</label>
+                <br>
+                <br>
+                <input type="date" class="form-control" name="date" id="date" value="2000-01-01" min="1950-01-01" max="2005-01-01">
+                <br>
+                <br>
+                <input type="submit" value="Подтвердить">
+            </form>
+    </div>
+        <?php } ?>
 </body>
 </html>
 
