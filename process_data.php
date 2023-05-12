@@ -20,11 +20,13 @@ function getCurrentUser() {
     return null;
 }
 
+// Set promotion for 24 hours
 function setPromo() {
     $time = time() + 86400;
     setcookie('time', $time, time() + 86400);
 }
 
+// Get remaining time 
 function getPromo() {
     if (isset($_COOKIE['time'])) {
         $exp_time = $_COOKIE['time'] - time();
@@ -36,10 +38,12 @@ function getPromo() {
     return null;
 }
 
+// Set user birthday
 function setDateOfBirth($date) {
     setcookie('date_of_birth', $date, time() + 1314000);
 }
 
+// Get number of days until user birthday
 function getDateOfBirth() {
     if (isset($_COOKIE['date_of_birth'])) {
         $date = $_COOKIE['date_of_birth'];
@@ -64,7 +68,7 @@ function getDateOfBirth() {
                 $d = 'дня';
                 else
                     $d = 'дней';
-        return "До Вашего дня рождения осталось $rem_days $d";
+        return "До дня Вашего рождения осталось $rem_days $d";
     }
     return null;
 }

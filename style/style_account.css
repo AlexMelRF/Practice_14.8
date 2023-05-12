@@ -1,0 +1,29 @@
+body {
+    font-family: 'Share Tech Mono', monospace;
+    color: rgb(44, 6, 6);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(44, 6, 6);
+}
+
+ul {
+    list-style: none;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#list {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}

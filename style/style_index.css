@@ -1,4 +1,94 @@
 body {
     font-family: 'Share Tech Mono', monospace;
     color: rgb(44, 6, 6);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 20px 20px;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(44, 6, 6);
+}
+
+ul {
+    list-style: none;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#head {
+    
+    width: 50%;
+}
+
+#menu {
+    margin: 20px 20px;
+    width: 15%;
+}
+
+#list {
+    width: 15%;
+    height: fit-content;
+    margin: 86px 10px;
+    padding: 10px;
+    border-style: solid;
+    border-color: rgb(98, 31, 143);
+    border-width: 1px;
+    position: absolute;
+}
+
+#list p {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(98, 31, 143);
+}
+
+#list ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+#list li {
+    margin-bottom: 17px;
+}
+
+#list a {
+    text-decoration: none;
+    color: rgb(44, 6, 6);
+}
+
+#list a:hover {
+    color: rgb(2, 2, 63);
+}
+
+#promo {
+    display: flex;
+    justify-content: center;
+}
+
+#promo p {
+    color: rgb(215, 18, 18);
+    font-size: 20px;
+    font-style: oblique;
+}
+
+img {
+    width: 100%;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+section {
+    width: 100%;
+    padding: 40px 0 0px;
 }
