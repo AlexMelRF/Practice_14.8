@@ -39,9 +39,6 @@ ul {
     height: fit-content;
     margin: 110px 10px;
     padding: 10px;
-    border-style: solid;
-    border-color: rgb(98, 31, 143);
-    border-width: 1px;
     position: absolute;
 }
 

@@ -33,7 +33,7 @@ function getPromo() {
         $hour = intdiv($exp_time, 3600);
         $minute = intdiv(($exp_time - $hour * 3600), 60);
         $second = $exp_time - $hour * 3600 - $minute * 60;
-        return "До конца акции осталось: $hour ч. $minute м. $second c.";
+        return "Персональная скидка 5% на все услуги! До конца акции осталось: $hour ч. $minute м. $second c.";
     }
     return null;
 }

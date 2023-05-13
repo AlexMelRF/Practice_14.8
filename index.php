@@ -25,9 +25,12 @@
 							<a href="login.php">Вход</a>
 						<?php } else { ?>
 								    <a href="account.php">Вы вошли как: <?php echo getCurrentUser(); ?></a>
+                                <?php } ?>
                     </li>
                     <li>
+                    <?php if($auth) { ?>
                         <a href="logout.php">Выйти</a>
+                    <?php } ?>    
                     </li>
                 </ul>
             </div>     
@@ -36,21 +39,23 @@
     <main>
         <section>
             <div id="promo">
-                <?php
-                if (!getPromo())
-                    setPromo();
-                else { ?> 
-                    <p><?php echo getPromo(); ?></p>
-                <?php } ?>
+                <?php if($auth) {  
+                    if (!getPromo())
+                        setPromo();
+                    else { ?> 
+                        <p><?php echo getPromo(); ?></p>
+                    <?php } 
+                } ?>   
             </div>
             <article>
                 <img src="images/look.com.ua-267366.jpg" alt="#">
             </article>
         </section>
         <aside id="list">
-            <?php if (getDateOfBirth()) ?>
+            <?php if($auth) {
+                if (getDateOfBirth()) ?>
                     <p><?php echo getDateOfBirth(); ?></p>
-			<?php } ?>
+                <?php } ?>
             <ul>
                 <li>
                     <a href="#">Новинка! Массаж Русский на березовых поленьях!</a>

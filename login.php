@@ -9,7 +9,7 @@ if (!empty($_POST)) {
     $login = $_POST['login'] ?? null;
     $password = $_POST['password'] ?? null;
     if (userCheck($login, $password)) 
-        header('Location: account.php');
+        header ('Location: account.php');
     else 
         $error = 'Пароль и/или логин неверный!';
 } ?>
